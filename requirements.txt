@@ -3,4 +3,5 @@ numpy
 pyserial
 cobs
 PyQt5
-protobuf
+mypy-protobuf==1.10
+protobuf==3.7.1
