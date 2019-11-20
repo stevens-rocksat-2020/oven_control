@@ -1,0 +1,6 @@
+pyqtgraph
+numpy
+pyserial
+cobs
+PyQt5
+protobuf
