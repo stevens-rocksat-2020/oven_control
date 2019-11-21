@@ -47,9 +47,10 @@ class Controller:
 
 def get_serial_port():
     try:
-        return list(filter(lambda x: x.serial_number == "F1A3B8CA51504C3750202020FF09250C",
+        return list(filter(lambda x: x.serial_number == "F1A3B8CA51504C3750202020FF09250C" or x.serial_number == "7",
                        list_ports.comports()))[0].device
     except IndexError:
+        print("Com port serials", list(map(lambda x: x.serial_number, list_ports.comports())))
         raise Exception("Port not found")
 
 

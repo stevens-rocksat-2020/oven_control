@@ -6,6 +6,7 @@ import numpy as np
 import sys
 from oven.oven_pb2 import OvenStatus as OvenStatusProto
 import oven.oven_pb2 as oven_proto
+import reflow_curve
 import serial_connection
 
 class CurvePlotter:
@@ -123,7 +124,9 @@ class OvenControl(QtGui.QWidget):
         self.setLayout(layout)
 
     def oven_state_callback(self, new_state: str):
-        # print(f"oven_state_callback() {new_state}")
+        print(f"oven_state_callback() {new_state}")
+        if new_state == "profile":
+            self.controller.set_oven_configuration(reflow_curve.reflow_profile_configuration())
         self.controller.set_oven_status(oven_proto.OvenState.Value(new_state.upper()))
         pass
 
