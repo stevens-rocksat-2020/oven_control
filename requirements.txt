@@ -4,4 +4,4 @@ pyserial
 cobs
 PyQt5
 mypy-protobuf==1.10
-protobuf==3.7.1
+protobuf==3.18.3
